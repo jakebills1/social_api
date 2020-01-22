@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       resource :profile do
         resources :posts 
       end
+      resources :posts do
+        resources :likes
+      end
     end
   end
 end
