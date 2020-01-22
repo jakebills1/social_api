@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resource :profile do
-        resources :posts 
+        resources :posts
       end
       resources :posts do
         resources :likes
+      end
+      resources :relationships do
+        resource :type 
       end
     end
   end
