@@ -1,6 +1,6 @@
 class Api::V1::TypeController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_relationship, only: :create 
+  before_action :set_relationship, only: :create
   before_action :set_type, only: [:show, :update, :destroy]
   def show
     render json: @type
@@ -39,6 +39,7 @@ class Api::V1::TypeController < ApplicationController
   end
 
   def type_params
-    params.require(:type).permit()
+    params.require(:type).permit(:relationship_type)
   end
 end
+  
